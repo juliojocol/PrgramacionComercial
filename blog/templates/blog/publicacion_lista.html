@@ -1,0 +1,13 @@
+<html>
+<body>
+    
+    {% for publicacion in publicaciones %}
+        <div></div>
+            <p>Publicado: {{ publicacion.fecha_publicacion }}</p>
+            <h2><a href=""> {{publicacion.titulo}}</a></h2>
+            <p>{{ publicacion.texto|linebreaksbr }}</p>
+            </div>
+    {% endfor %}
+    
+</body>
+</html>
