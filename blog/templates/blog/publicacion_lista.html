@@ -1,13 +1,13 @@
-<html>
-<body>
-    
+{% extends 'blog/base.html' %}
+
+{% block content %}
     {% for publicacion in publicaciones %}
-        <div></div>
-            <p>Publicado: {{ publicacion.fecha_publicacion }}</p>
-            <h2><a href=""> {{publicacion.titulo}}</a></h2>
-            <p>{{ publicacion.texto|linebreaksbr }}</p>
+        <div class="post">
+            <div class="date">
+                <p>publicado: {{ publicacion.fecha_publicacion }}</p>
             </div>
+            <h2><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{publicacion.titulo}}</a></h2>
+            <p>{{ publicacion.texto|linebreaksbr }}</p>
+        </div>
     {% endfor %}
-    
-</body>
-</html>
+{% endblock %}  
