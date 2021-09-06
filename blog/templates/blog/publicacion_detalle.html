@@ -3,9 +3,8 @@
 {% block content %}
     <div class="post">
         {% if publicacion.fecha_publicacion %}
-            
             <div class="date">
-                {{ publicacion.fecha_publicacion }}
+                <p>{{ publicacion.fecha_publicacion }}</p>
             </div>
         {% endif %}
         <h2>{{ publicacion.titulo }}</h2>

@@ -1,6 +1,5 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import get_object_or_404, render, get_list_or_404
 from django.utils import timezone
-from django.utils.regex_helper import normalize
 
 from.models import Publicacion
 
@@ -9,5 +8,5 @@ def publicacion_lista(request):
     return render(request, 'blog/publicacion_lista.html', {'publicaciones':publicaciones})
 
 def publicacion_detalle(request, pk):
-    publicacion = get_list_or_404(Publicacion, pk=pk)
+    publicacion = get_object_or_404(Publicacion, pk=pk)
     return render(request, 'blog/publicacion_detalle.html', {'publicacion':publicacion})
