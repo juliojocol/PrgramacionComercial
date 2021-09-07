@@ -1,24 +1,60 @@
 {% load static %}
-<html>
-    <head>
-        <title>Pagina con Django</title>
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">Publicaciones con bootstrap Blog</a></h1>
-        </div>
 
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">                
-                {% block content %}
-                {% endblock %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publicaciones con Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+  <body>
+
+    <section class="hero is-primary">
+        <div class="hero-body">
+          <p class="subtitle is-1">
+            Publicaciones con <strong>Bulma</strong>!
+          </p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="col-md-8">                
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+
+  <section class="hero is-info">
+    <div class="hero-body">
+        <article class="media">
+            <figure class="media-left">
+              <p class="image is-128x128">
+                <img src="https://www.umes.edu.gt/wp-content/uploads/2015/03/LOGO-UMES-color-verde.jpg">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  Julio Jocol correo:<small>juliojocol12</small><small>@mesoamericana.edu.gt</small> <strong>Programacion Comercial</strong>
+                </p>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-reply"></i></span>
+                  </a>
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+                  </a>
+                  <a class="level-item">
+                    <span class="icon is-small"><i class="fas fa-heart"></i></span>
+                  </a>
                 </div>
+              </nav>
             </div>
-        </div>        
-    </body>
+          </article>
+    </div>
+  </section>
+  </body>
 </html>
