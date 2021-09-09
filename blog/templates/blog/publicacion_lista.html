@@ -2,12 +2,12 @@
 
 {% block content %}
     {% for publicacion in publicaciones %}
-        <div class="post">
-            <div class="date">
-                <p class="subtitle is-7">publicado: {{ publicacion.fecha_publicacion }}</p>
+        <div class="box">
+            <div class="notification is-link-is-light">
+                publicado: {{ publicacion.fecha_publicacion }}
             </div>
             <h2 class="title is-1" ><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{publicacion.titulo}}</a></h2>
-            <p>{{ publicacion.texto|linebreaksbr }}</p>
+            <div class="content">{{ publicacion.texto|linebreaksbr }}</div>
         </div>
     {% endfor %}
 {% endblock %} 
