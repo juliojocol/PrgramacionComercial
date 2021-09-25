@@ -4,14 +4,14 @@
     <div class="box">
         {% if publicacion.fecha_publicacion %}
             <div class="notification is-link is-light">
-                publicado: {{ publicacion.fecha_publicacion }}
+                <p>publicado: {{ publicacion.fecha_publicacion }}</p>
             </div>
-        {% endif %}
-        <h2 class="title is-1">{{ publicacion.titulo  }}
-            <a class="button is-info" href="{% url 'publicacion_editar' pk=publicacion.pk %}">
-                <span class="glyphicon glyphicon-pencil"></span>
-            </a>
-        </h2>
+        {% else %}
+                <a class="button is-primary" href="{% url 'publicacion_publicar' pk=publicacion.pk %}"><span class="fa fa-check"></span></a>
+            {% endif %}
+            <a class="button is-info" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="button is-danger" href="{% url 'publicacion_eliminar' pk=publicacion.pk %}"><span class="fa fa-eraser"></span></a>
+            <h4 class="title is-1">{{ publicacion.titulo  }}</h4>
         <p>{{ publicacion.texto|linebreaksbr }}</p>
     </div>
 {% endblock %}

@@ -6,7 +6,11 @@
             <div class="notification is-link-is-light">
                 publicado: {{ publicacion.fecha_publicacion }}
             </div>
-            <h2 class="title is-1" ><a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">{{publicacion.titulo}}</a></h2>
+            <h4 class="title is-1" >
+                <a href="{% url 'publicacion_detalle' pk=publicacion.pk %}">
+                    {{publicacion.titulo}}
+                </a>
+            </h4>
             <div class="content">{{ publicacion.texto|linebreaksbr }}</div>
         </div>
     {% endfor %}
